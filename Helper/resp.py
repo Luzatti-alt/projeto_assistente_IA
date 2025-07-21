@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 class Resp:
     def ia(self):
-        # Carregar a chave da API do arquivo .env de preferencia na mesmo lugar
+        # Carregar a chave da API do arquivo .env
         API_KEY = os.environ.get("GOOGLE_API_KEY")
         # Verificar se a chave foi carregada corretamente
         if not API_KEY:
@@ -29,7 +29,10 @@ class Resp:
             print(resposta.text)
             # Instanciar a classe TTS e gerar a voz a partir da resposta
             tts = TTS()
+            print("Passando a resposta para o TTS...")
             tts.msg_voz(resposta.text)
+            # Executar o TTS para gerar o áudio
+            print("Iniciando o TTS...")
             tts.rodar_tts()
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
