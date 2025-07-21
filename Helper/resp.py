@@ -1,5 +1,5 @@
 import google.generativeai as gemini
-#chama a api pelo nome gemini
+from tts import TTS
 import os
 class resp:
     def ia(self):
@@ -19,6 +19,9 @@ class resp:
         )
         print("\nGemini responde:")
         print(resposta.text)
+        tts = TTS()
+        tts.msg_voz(resposta.text)
+        tts.rodar_tts()
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
         print("Verifique sua chave de API, a quantidade de usos ou a disponibilidade do serviço.")
