@@ -5,7 +5,7 @@ import os
 # É altamente recomendável usar variáveis de ambiente para sua chave de API
 # Por exemplo, defina a variável de ambiente 'GEMINI_API_KEY' com sua chave. Se estiver testando localmente, você pode definir diretamente para 'SUA_API_KEY',
 # REMOVA antes de compartilhar ou implantar.
-API_KEY = os.environ.get("API_KEY") 
+API_KEY = os.environ.get("API_KEY")
 # Se a chave não for encontrada
 if not API_KEY:
     print("ATENÇÃO: A chave de API GEMINI_API_KEY não foi encontrada nas variáveis de ambiente.")
@@ -26,7 +26,7 @@ try:
     # Seu prompt + condição
     prompt = str(input("digite sua pergunta: "))
     #print(f"\nEnviando prompt ao Gemini: '{prompt}'") #prompt que será criado
-    prompt_2 = str(prompt)+str("faça a responda como uma pessoa da idade média.")#{prompt} + condição
+    prompt_2 = str(prompt)+str("Você é um assitente geral você podera fazer as seguintes tarefas(temporatio enqunato fase de testes: resumir eventos da semana, pesquisar sobre o assunto perguntdo e entre outras coisas)")#{prompt} + condição
     #Gera a resposta
     resposta = model.generate_content(
         prompt_2
