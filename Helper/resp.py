@@ -26,9 +26,8 @@ class Resp:
             # Exibir a resposta
             print("\nGemini responde:")
             print(resposta.text)#resposta.text num obj e e, tts ele consulata o resposta.text
+            voz :Resp = resposta.text
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
             print("Verifique sua chave de API, a quantidade de usos ou a disponibilidade do serviço.")
 # Criar um objeto da classe e chamar o método ia
-resp = Resp()
-resp.ia()
