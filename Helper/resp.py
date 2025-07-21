@@ -1,7 +1,7 @@
 import google.generativeai as gemini
 from tts import TTS
 import os
-class resp:
+class Resp:
     def ia(self):
         API_KEY = os.environ.get("API_KEY")
         if not API_KEY:
