@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 class Resp:
     def ia(self):
-        # Carregar a chave da API do arquivo .env
+        # Carregar a chave da API do arquivo .env de preferencia na mesmo lugar
         API_KEY = os.environ.get("GOOGLE_API_KEY")
         # Verificar se a chave foi carregada corretamente
         if not API_KEY:
