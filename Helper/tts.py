@@ -15,7 +15,7 @@ class TTS:
         #tts volume(0-1)
         self.engine.setProperty('volume', self.volume)
     def msg_voz(self,msg : str):
-        text_to_speak = msg
+        self.msg = msg
     def rodar_tts(self):
         #conversao e tocar
         self.engine.say(self.msg)
