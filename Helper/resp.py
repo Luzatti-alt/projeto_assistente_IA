@@ -1,14 +1,16 @@
 import google.generativeai as gemini
 from tts import TTS
 import os
+from dotenv import load_dotenv
+load_dotenv()
 class Resp:
     def ia(self):
-        API_KEY = os.environ.get("API_KEY")
+        API_KEY = os.environ.get("GOOGLE_API_KEY")
         gemini.configure(api_key=API_KEY)
         if not API_KEY:
             print("ATENÇÃO: A chave de API GEMINI_API_KEY não foi encontrada nas variáveis de ambiente.")
             print("Por favor, defina a variável de ambiente ou substitua 'SUA_API_KEY' abaixo.")
-            API_KEY = "AIzaSyDGfaG7gLJccDcHfxn7ooNXEEYzE2THStM" #api aqui
+            API_KEY = "GOOGLE_API_KEY" #api aqui
         gemini.configure(api_key=API_KEY)
     try:
         model = gemini.GenerativeModel('models/gemini-1.5-flash-latest')
