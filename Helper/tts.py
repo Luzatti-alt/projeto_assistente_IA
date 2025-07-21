@@ -24,5 +24,5 @@ class TTS:
         self.engine.stop()
 tts = TTS()
 tts.propriedades(150,1)
-tts.msg_voz()
+tts.msg_voz(Resp.voz())
 tts.rodar_tts()
