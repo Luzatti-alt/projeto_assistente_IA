@@ -1,4 +1,5 @@
 import pyttsx3
+from resp import Resp
 class TTS:
     def __init__(self):#metodo que inicia o tts
         self.engine = pyttsx3.init()
@@ -23,4 +24,5 @@ class TTS:
         self.engine.stop()
 tts = TTS()
 tts.propriedades(150,1)
+tts.msg_voz()
 tts.rodar_tts()
