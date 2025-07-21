@@ -4,6 +4,7 @@ import os
 class Resp:
     def ia(self):
         API_KEY = os.environ.get("API_KEY")
+        gemini.configure(api_key=API_KEY)
         if not API_KEY:
             print("ATENÇÃO: A chave de API GEMINI_API_KEY não foi encontrada nas variáveis de ambiente.")
             print("Por favor, defina a variável de ambiente ou substitua 'SUA_API_KEY' abaixo.")
