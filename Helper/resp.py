@@ -2,7 +2,7 @@ import google.generativeai as gemini
 #chama a api pelo nome gemini
 import os
 class resp:
-    def ia:
+    def ia(self):
         API_KEY = os.environ.get("API_KEY")
         if not API_KEY:
             print("ATENÇÃO: A chave de API GEMINI_API_KEY não foi encontrada nas variáveis de ambiente.")
