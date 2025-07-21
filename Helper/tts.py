@@ -5,7 +5,7 @@ class TTS:
         #self.text_to_speak = "iniciando"  # Mensagem default
         self.rate = 150  # Rate padrão
         self.volume = 0.9  # Volume padrão
-        self.msg = input("digite seu texto que será convertido para voz: \n")
+        self.msg = ""
     def propriedades(self,rate:int,vol:int):
         #indica que o parâmetro e seu tipo
         #tts rate
