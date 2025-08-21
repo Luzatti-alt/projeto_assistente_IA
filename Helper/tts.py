@@ -17,6 +17,10 @@ class TTS:
     def msg_voz(self,msg : str):
         self.msg = msg
     def rodar_tts(self):
+        if not self.msg:
+            print("sem mensagem no tts")
+            return
+
         #conversao e tocar
         self.engine.say(self.msg)
         self.engine.runAndWait()
