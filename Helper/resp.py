@@ -20,14 +20,12 @@ class Resp:
             model = gemini.GenerativeModel('models/gemini-1.5-flash-latest')
             # Solicitar o prompt do usuário
             prompt = Ouvir()
-            print(f"\nEnviando prompt ao Gemini: '{prompt}'")  # Exibir o prompt gerado
-            # Adicionar uma condição para a resposta (exemplo: comportamento do assistente)
+            #o 2 é regras adicionadas ao assistente
             prompt_2 = f"{prompt} Você é um assistente geral e pode realizar as seguintes tarefas (temporário enquanto está em fase de testes): resumir eventos da semana, pesquisar sobre o assunto perguntado, entre outras coisas."
             # Gerar a resposta do modelo
             resposta = model.generate_content(prompt_2)
             # Exibir a resposta
-            print("\nGemini responde:")
-            print(resposta.text)#resposta.text num obj e e, tts ele consulata o resposta.text
+            print(f"resposta gemini:\n{resposta.text}")#resposta.text num obj e e, tts ele consulata o resposta.text
             voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
             print(voz)
             # Instanciar o TTS e passar o texto para ser falado
