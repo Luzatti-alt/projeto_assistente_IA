@@ -2,17 +2,17 @@ import google.generativeai as gemini
 import os
 from dotenv import load_dotenv
 from mic import Ouvir
-from tts import TTS
+#from tts import TTS
 load_dotenv()
 class Resp:
     def ia(self):
         # Carregar a chave da API do arquivo .env
-        API_KEY = os.environ.get("GOOGLE_API_KEY")
+        API_KEY = os.environ.get("G_API_KEY")
         # Verificar se a chave foi carregada corretamente
         if not API_KEY:
-            print("ATENÇÃO: A chave de API 'GOOGLE_API_KEY' não foi encontrada nas variáveis de ambiente.")
+            print("ATENÇÃO: A chave de API 'API_KEY' não foi encontrada nas variáveis de ambiente.")
             print("Por favor, defina a variável de ambiente ou substitua diretamente a chave de API no código.")
-            API_KEY = "SUA_CHAVE_AQUI"  # Substitua pela sua chave de API, caso não use variáveis de ambiente.
+            API_KEY = G_API_KEY  # Substitua pela sua chave de API, caso não use variáveis de ambiente.
         # Configurar a API Gemini com a chave fornecida
         gemini.configure(api_key=API_KEY)
         try:
@@ -28,13 +28,17 @@ class Resp:
             # Exibir a resposta
             print("\nGemini responde:")
             print(resposta.text)#resposta.text num obj e e, tts ele consulata o resposta.text
-            voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
-
+            #voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
+            #print(voz)
             # Instanciar o TTS e passar o texto para ser falado
-            tts = TTS()
-            tts.msg_voz(voz)  # Passando o texto para o TTS
-            tts.rodar_tts()
+            #tts = TTS()
+            #tts.msg_voz(voz)  # Passando o texto para o TTS
+            #tts.rodar_tts()
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
             print("Verifique sua chave de API, a quantidade de usos ou a disponibilidade do serviço.")
-# Criar um objeto da classe e chamar o método ia
+# Main program loop
+if __name__ == "__main__":
+    resp_instance = Resp()
+    while True:
+        resp_instance.ia()
