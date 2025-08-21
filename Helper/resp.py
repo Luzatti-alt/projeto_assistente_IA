@@ -16,26 +16,22 @@ class Resp:
         # Configurar a API Gemini com a chave fornecida
         gemini.configure(api_key=API_KEY)
         try:
-            # Definir o modelo Gemini
             model = gemini.GenerativeModel('models/gemini-1.5-flash-latest')
-            # Solicitar o prompt do usuário
             prompt = Ouvir()
-            #o 2 é regras adicionadas ao assistente
+            #o prompt 2 é regras adicionadas ao assistente
             prompt_2 = f"{prompt} Você é um assistente geral e pode realizar as seguintes tarefas (temporário enquanto está em fase de testes): resumir eventos da semana, pesquisar sobre o assunto perguntado, entre outras coisas."
             # Gerar a resposta do modelo
             resposta = model.generate_content(prompt_2)
             # Exibir a resposta
-            print(f"resposta gemini:\n{resposta.text}")#resposta.text num obj e e, tts ele consulata o resposta.text
-            voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
+            print(f"resposta gemini:\n{resposta.text}")
+            voz = resposta.text 
             print(voz)
-            # Instanciar o TTS e passar o texto para ser falado
             tts = TTS()
             tts.msg_voz(voz)  # Passando o texto para o TTS
             tts.rodar_tts()
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
             print("Verifique sua chave de API, a quantidade de usos ou a disponibilidade do serviço.")
-# Main program loop
 if __name__ == "__main__":
     resp_instance = Resp()
     while True:
