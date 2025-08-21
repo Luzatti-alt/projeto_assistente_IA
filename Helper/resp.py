@@ -1,6 +1,7 @@
 import google.generativeai as gemini
 import os
 from dotenv import load_dotenv
+from mic import Ouvir
 from tts import TTS
 load_dotenv()
 class Resp:
@@ -18,7 +19,7 @@ class Resp:
             # Definir o modelo Gemini
             model = gemini.GenerativeModel('models/gemini-1.5-flash-latest')
             # Solicitar o prompt do usuário
-            prompt = str(input("Digite sua pergunta: "))
+            prompt = Ouvir()
             print(f"\nEnviando prompt ao Gemini: '{prompt}'")  # Exibir o prompt gerado
             # Adicionar uma condição para a resposta (exemplo: comportamento do assistente)
             prompt_2 = f"{prompt} Você é um assistente geral e pode realizar as seguintes tarefas (temporário enquanto está em fase de testes): resumir eventos da semana, pesquisar sobre o assunto perguntado, entre outras coisas."
