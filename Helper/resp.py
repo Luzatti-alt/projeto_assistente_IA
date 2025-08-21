@@ -2,7 +2,7 @@ import google.generativeai as gemini
 import os
 from dotenv import load_dotenv
 from mic import Ouvir
-#from tts import TTS
+from tts import TTS
 load_dotenv()
 class Resp:
     def ia(self):
@@ -28,12 +28,12 @@ class Resp:
             # Exibir a resposta
             print("\nGemini responde:")
             print(resposta.text)#resposta.text num obj e e, tts ele consulata o resposta.text
-            #voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
-            #print(voz)
+            voz = resposta.text  # Agora 'voz' é simplesmente o texto gerado
+            print(voz)
             # Instanciar o TTS e passar o texto para ser falado
-            #tts = TTS()
-            #tts.msg_voz(voz)  # Passando o texto para o TTS
-            #tts.rodar_tts()
+            tts = TTS()
+            tts.msg_voz(voz)  # Passando o texto para o TTS
+            tts.rodar_tts()
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
             print("Verifique sua chave de API, a quantidade de usos ou a disponibilidade do serviço.")
